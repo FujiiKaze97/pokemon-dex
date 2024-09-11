@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import PokemonContextProvider from '../Context/PokemonContext';
+import PokemonContextProvider, { PokemonContext } from '../Context/PokemonContext';
 import PokemonCard from './PokemonCard';
 
 
@@ -19,7 +19,10 @@ const ListContainer = styled.div`
 
 
 
-const PokemonList = ({ pokemonList, onAddPokemon }) => {
+const PokemonList = () => {
+  const {pokemonList} = useContext(PokemonContext);
+
+  console.log(pokemonList);
 
 
   return (

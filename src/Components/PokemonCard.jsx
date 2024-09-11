@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { PokemonContext } from '../Context/PokemonContext';
+import { useNavigate } from 'react-router-dom';
   
-const Card = styled.div`
+export const Card = styled.div`
   border: 1px solid #000000;
   background-color: #000000e2;
   border-radius: 15px;
@@ -15,6 +16,7 @@ const Card = styled.div`
   transition:  background-color 0.8s ease,
   box-shadow 0.2s,
   transform 0.2s;
+  padding: 20px;
   
 
   &:hover {
@@ -27,13 +29,14 @@ const Card = styled.div`
 
 export const Button = styled.button`
   background-color: #ffffff;
-  border-radius : 10px;
+  border-radius : 8px;
   margin-top: 10px;
 `;
 
 
 function PokemonCard({ pokemon, onAdd, onRemove, isSelected }) {
   const pokemonContext = useContext(PokemonContext);
+  const navigator = useNavigate();
 
 
   const addPokemon = () => {
@@ -53,15 +56,32 @@ function PokemonCard({ pokemon, onAdd, onRemove, isSelected }) {
   pokemonContext.setPokemon(removePokemonArr);
   }
 
+  const detailPageClick = () => {
+      navigator(`/detail?id=${pokemon.id}`)
+   }
+ 
+
   
   return (
-    <Card key = {pokemon.id}>
+    <Card key = {pokemon.id} onClick={detailPageClick}>
       <img src={pokemon.img_url} alt={""} />
       <div>{pokemon.korean_name}</div>
       <div>{pokemon.types}</div>
       <div>{pokemon.description}</div>
       <div>
-      {isSelected ?<Button onClick={removePokemon}>삭제</Button>  :  <Button onClick={addPokemon}>추가</Button> }
+      {isSelected ?<Button onClick={(e)=> {
+        e.stopPropagation();
+        removePokemon();
+      }}>
+        삭제
+        </Button>  :  
+        <Button onClick={(e)=> {
+          e.stopPropagation();
+          addPokemon();
+        }
+        }>
+          추가
+          </Button>}
       </div>
     </Card>
   );
