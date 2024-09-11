@@ -20,6 +20,7 @@ margin-top: 30px;
 width: 10%;
 background-color: #e9e9e9f9;
 color:#000000;
+text-align: center;
 font-size: 15px;
 font-weight: bold;
 border-radius: 15px;
