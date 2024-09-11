@@ -1,16 +1,13 @@
 # 프로젝트 이름
 Pokemon Dex (포켓몬 도감) 만들
 ## 📖 목차
-1. [프로젝트 소개](#프로젝트-소개)
+1. [배포 링크](#프로젝트-소개)
 2. [팀소개](#팀소개)
-3. [프로젝트 계기](#프로젝트-계기)
+3. [프로젝트 소개](#프로젝트-계기)
 4. [주요기능](#주요기능)
 5. [개발기간](#개발기간)
 6. [기술스택](#기술스택)
-7. [서비스 구조](#서비스-구조)
-8. [와이어프레임](#와이어프레임)
-9. [API 명세서](#API-명세서)
-10. [ERD](#ERD)
+7. [실행](#실행)
 11. [프로젝트 파일 구조](#프로젝트-파일-구조) 
 12. [Trouble Shooting](#trouble-shooting) - 후기 
     
@@ -22,14 +19,18 @@ https://pokemon.fujiikaze.kr
   All Page
   Addictional Feature
 
-## 프로젝트 계기
+## 프로젝트 소개
 For the review, I thought it was important to start the project I did through react from the zero point, make it to the end, and think about additional functions.
 So I started the Pokémon illustration project again.
 
-##Refactoring 순서
+## Refactoring 순서
 branch props-drilling -> context api -> redix-toolkits -> refactor
 
-##포켓몬 도감 추가하고 싶은 기능 
+## 💜 주요기능
+
+- 기능 1 : 도감 페이지에서 6마리의 포켓몬을 대시 보드에 추가할 수 있는 기능 -> 추가한 포켓몬은 클릭 시 바로 디테일 페이지에서 정보 확인 가능
+ 
+## 💜 포켓몬 도감 추가하고 싶은 기능 
 1 다른 최신 포켓몬들까지도 전부 데이터 가져오기 + 추가하기
 2 메인화면 로고 뜨도록 
 3 디테일 화면에서 추가 누르면 대시보드에 추가 되도록
@@ -40,10 +41,6 @@ branch props-drilling -> context api -> redix-toolkits -> refactor
 8 해당 포켓몬의 평생 배우는 스킬 정보 같은 거 가져오기
 9. 모바일이나 다른 화면에서도 잘 보이도록 반응형 웹 구현 및 모바일 환경에서 테스트 
 
-## 💜 주요기능
-
-- 기능 1 : 도감 페이지에서 6마리의 포켓몬을 대시 보드에 추가할 수 있는 기능 -> 추가한 포켓몬은 클릭 시 바로 디테일 페이지에서 정보 확인 가능
-- 
 
 ## ⏲️ 프로젝트 개발기간
 - 2024.09.10(화) ~ 2024.09.11(수)
